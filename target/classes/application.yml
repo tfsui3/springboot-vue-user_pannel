@@ -1,0 +1,57 @@
+#jdbc:
+#  driverClassName: com.mysql.cj.jdbc.Driver
+#  url: jdbc:mysql://localhost:3306/spring_project
+#  username: root
+#  password: root
+
+
+spring:
+  #激活配置文件，需要指定其他配置文件名称
+  profiles:
+    active: abc
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/student?serverTimezone=UTC
+    username: root
+    password: root
+  redis:
+    host: localhost
+    port: 6379
+  web:
+    resources:
+      static-locations: classpath:/static/css,classpath:/static/vue,classpath:/static/js
+
+mybatis:
+  # 实体类别名包
+  type-aliases-package: com.demo01.pojo
+  # 映射文件路径
+#  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#日志记录级别
+#logging:
+#  level:
+#    com.demo01: debug
+#    org.springframework: info
+
+#修改默认端口
+#server:
+#  port: 80
+
+#  需要赋值的话，配置项后:空一格
+#  如果是层级关系，则在冒号下一行空两格，例：
+#  key:
+#    something: root
+#    def:             (集合类型)
+#      - g
+#      - h
+#      - j
+
+#  2. 多个yml配置文件：在spring-boot中是可允许的，但命名必须为 application-***.yml,
+#  并且application.yml中必须要激活
+#  3. 如果properties与yml同时存在，两者都生效
+#     如果两者文件名相同，则会以 properties 为主
+#
+#
+#
